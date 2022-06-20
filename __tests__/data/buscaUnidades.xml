@@ -1,0 +1,26 @@
+<NewDataSet>
+    <GColigada>
+        <CODCOLIGADA>0</CODCOLIGADA>
+        <NOMEFANTASIA>COLIGADA GLOBAL</NOMEFANTASIA>
+        <CGC>00.000.000/0000-00</CGC>
+        <EMAIL>email@email.com.br</EMAIL>
+        <INTEGRADOFLUIG>0</INTEGRADOFLUIG>
+    </GColigada>
+    <GColigada>
+        <CODCOLIGADA>1</CODCOLIGADA>
+        <NOMEFANTASIA>HOLDING</NOMEFANTASIA>
+        <CGC>99.999.9999/99</CGC>
+        <NOME>ACME LTDA</NOME>
+        <TELEFONE>(11) 0000-0000</TELEFONE>
+        <FAX>(11) 0000-0000</FAX>
+        <EMAIL>ti@acme.com.br</EMAIL>
+        <RUA>Av. dos Parques</RUA>
+        <NUMERO>285</NUMERO>
+        <BAIRRO>Cidade Jardim</BAIRRO>
+        <CIDADE>São Paulo</CIDADE>
+        <ESTADO>SP</ESTADO>
+        <PAIS>BRASIL</PAIS>
+        <CEP>30380111</CEP>
+        <INTEGRADOFLUIG>0</INTEGRADOFLUIG>
+    </GColigada>
+</NewDataSet>

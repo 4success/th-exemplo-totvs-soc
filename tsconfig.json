@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES2017",
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "outDir": "./built",
+    "sourceMap": true,
+    "lib": ["ES2020.Promise"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}

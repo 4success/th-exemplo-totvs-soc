@@ -1,0 +1,4 @@
+
+/** AutenticaAcesso */
+export interface AutenticaAcesso {
+}

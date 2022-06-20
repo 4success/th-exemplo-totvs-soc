@@ -1,0 +1,4 @@
+
+/** CheckServiceActivity */
+export interface CheckServiceActivity {
+}
