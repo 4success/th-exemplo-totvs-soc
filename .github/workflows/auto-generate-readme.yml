@@ -1,4 +1,4 @@
-# Version: 1.0.0
+# Version: 1.0.1
 name: Auto Generate README
 
 on:
@@ -11,23 +11,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  check-repo:
-    runs-on: ubuntu-latest
-    outputs:
-      should_run: ${{ steps.check.outputs.should_run }}
-    steps:
-      - id: check
-        run: |
-          if [[ "${{ github.event.repository.name }}" =~ ^th- ]]; then
-            echo "should_run=true" >> $GITHUB_OUTPUT
-          else
-            echo "should_run=false" >> $GITHUB_OUTPUT
-          fi
-
   generate-readme:
-    needs: check-repo
-    if: needs.check-repo.outputs.should_run == 'true'
     runs-on: ubuntu-latest
+    if: startsWith(github.event.repository.name, 'th-')
     
     steps:
       - name: Checkout Repository
@@ -44,7 +30,6 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          npm install
           npm install -g typescript ts-node
 
       - name: Clone README Generator
@@ -59,8 +44,11 @@ jobs:
           GITHUB_ORG: '4success'
           LLM_PROVIDER: 'claude'
           LLM_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          GIT_CREDENTIALS: https://x-access-token:${{ secrets.README_TOKEN }}@github.com
         run: |
           cd github-readme-generator
+          git config --global credential.helper store
+          echo "$GIT_CREDENTIALS" > ~/.git-credentials
           ts-node src/index.ts --single-repo ${{ github.event.repository.name }}
 
       - name: Commit README if Changed
