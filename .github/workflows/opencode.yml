@@ -1,4 +1,4 @@
-# Version: 1.0.0
+# Version: 1.0.1
 name: opencode
 
 on:
@@ -29,4 +29,4 @@ jobs:
         env:
           ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
         with:
-          model: zai-coding-plan/glm-4.6
+          model: ${{ secrets.ZAI_MODEL }}
